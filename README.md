@@ -1,2 +1,12 @@
-# messages-web
-Otra web creada para practicar Dokceriles y dockercompose esta vez con ayuda de ChatGPT 
+Flask Docker-Friendly App 🚀
+
+
+
+
+
+
+
+
+Autores: Thiago + ChatGPT
+
+📂 Estructura del proyecto
