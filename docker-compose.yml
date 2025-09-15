@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: flask_app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  db:
+    image: postgres:16
+    container_name: flask_db
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+# This docker-compose.yml sets up a Flask web application with a PostgreSQL database.
+# The web service depends on the db service and includes a health check.
+# Environment variables are configured for database connection.
+# The web service maps port 8000 on the host to port 8000 in the container.
+  
+
+# Use 'docker-compose up --build' to build and start the services
+# Access the Flask app at http://localhost:8000
+

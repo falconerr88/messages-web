@@ -1,0 +1,24 @@
+```html
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block title %}Flask Docker-friendly{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Flask Docker-friendly</h1>
+      <nav>
+        <a href="/">Inicio</a> | <a href="/about">About</a>
+      </nav>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">Hecho para Docker — simple y portable.Thiago Lovey and ChatGPT
+    </footer>
+  </body>
+</html>
+```

@@ -1,0 +1,52 @@
+# Python cache and virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.pycache
+*.egg-info/
+.eggs/
+.env/
+.venv/
+venv/
+ENV/
+env/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+out/
+coverage/
+htmlcov/
+
+# Environment files
+.env
+
+
+# Docker files
+Dockerfile*
+docker-compose*
+
+# Git
+.git
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# Misc
+*.swp
+*.swo
+*.bak
+*.tmp

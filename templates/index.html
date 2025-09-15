@@ -1,0 +1,32 @@
+```html
+{% extends 'base.html' %}
+{% block title %}Inicio - Flask Docker-friendly{% endblock %}
+{% block content %}
+  <h2>Bienvenido</h2>
+  <p>Aplicación de ejemplo preparada para contenerización.</p>
+
+  <section class="card">
+    <h3>Dejanos un mensaje</h3>
+    <form action="/send" method="post">
+      <label for="name">Nombre</label>
+      <input id="name" name="name" placeholder="Thiago Lovey Castelan">
+      <label for="text">Mensaje</label>
+      <textarea id="text" name="text" placeholder="Contenerizada por Thiago Lovey" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h3>Mensajes</h3>
+    {% if messages %}
+      <ul class="messages">
+      {% for m in messages %}
+        <li><strong>{{ m.name }}</strong>: {{ m.text }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No hay mensajes aún.</p>
+    {% endif %}
+  </section>
+{% endblock %}
+```

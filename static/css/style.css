@@ -1,0 +1,10 @@
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;padding:0;background:#f7f7f9;color:#222}
+.header{background:#0b5ed7;color:white;padding:12px 20px}
+.header a{color:rgba(255,255,255,0.9);text-decoration:none}
+.container{max-width:900px;margin:24px auto;padding:0 16px}
+.card{background:white;padding:16px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06);margin-bottom:16px}
+input,textarea{width:100%;padding:8px;margin:8px 0;border:1px solid #ddd;border-radius:6px}
+button{padding:10px 14px;border-radius:8px;border:none;background:#0b5ed7;color:white;cursor:pointer}
+.messages{list-style:none;padding:0}
+.messages li{padding:8px;border-bottom:1px solid #eee}
+.footer{text-align:center;padding:12px;color:#666}

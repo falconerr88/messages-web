@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+{% block title %}About - Flask Docker-friendly{% endblock %}
+{% block content %}
+  <h2>Acerca de</h2>
+  <p>Esta app es intencionalmente simple para servir como base de proyectos que se desplegarán en contenedores.</p>
+  <ul>
+    <li>Configuración por variables de entorno</li>
+    <li>Healthcheck en <code>/health</code></li>
+    <li>Recomendado ejecutar con Gunicorn en producción</li>
+  </ul>
+{% endblock %}
+
