@@ -55,17 +55,17 @@ FLASK_ENV=development
 
 🐳 Uso desde DockerHub
 
-Si ya subiste tu imagen a DockerHub (usuario/flask_app:latest):
+ git pull falconerr88/imagenes-pruebas:appmessages
 
-docker run -p 8000:8000 --env-file .env usuario/flask_app:latest
-
+docker run -p 8000:8000 --env-file .env falconerr88/imagenes-pruebas:appmessages
+O podes subir vos la imagen con el nombre que quieras y cambiarla por la mia que ya esta subida en DockerHub
     Accedé a la app en http://localhost:8000.
 
 🐙 Uso desde GitHub
 
 Cloná el repositorio:
 
-git clone https://github.com/tu_usuario/flask-docker-friendly.git
+git clone git@github.com:falconerr88/messages-web.git
 cd flask-docker-friendly
 
 Construí la imagen y ejecutala:
