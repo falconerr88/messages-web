@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy application files
 COPY  requirements.txt ./
 
-# Install Python dependencies (including gunicorn)
+# Install Python dependencies 
 RUN python -m venv /opt/venv \ 
   &&  /opt/venv/bin/pip install --upgrade pip  \
   &&  /opt/venv/bin/pip install --no-cache-dir -r requirements.txt  
@@ -46,9 +46,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=5s CMD curl --fail http:/
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 
-## To build the Docker image:
-# docker build -t (thenameyouwant) .   
 
-## To run the Docker container:
-# docker run -d -p 8000:8000 --name flask_app (thenameyouwant)
-# Access the application at http://localhost:8000
