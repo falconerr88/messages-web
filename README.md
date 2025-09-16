@@ -1,119 +1,87 @@
-Flask Docker-Friendly App 🚀
+# Flask Messages App 📨
+## Hecha para practicar dockerfiles y docker compose
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Flask](https://img.shields.io/badge/Flask-2.3.2-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blueviolet)
+![Docker](https://img.shields.io/badge/Docker-Ready-orange)
 
+Aplicación de mensajes simple hecha con **Python + Flask**, pensada para ser **docker-friendly** y extremadamente **portable**.
+Esta versión está optimizada para **ejecutarse únicamente con Docker Compose y PostgreSQL** para garantizar persistencia y confiabilidad de los datos.
 
+---
 
+## 🚀 Características
 
+* Mensajes persistentes usando PostgreSQL.
+* Multi-stage Dockerfile optimizado.
+* Usuario no root en producción.
+* Healthcheck integrado.
+* Fácil de ejecutar en cualquier máquina con Docker y Docker Compose.
 
+---
 
+## 🔧 Requisitos
 
+* Docker ≥ 20
+* Docker Compose ≥ 2
+* Python ≥ 3.11 (solo para desarrollo local)
 
-Autores: Thiago + ChatGPT
+---
 
-📂 Estructura del proyectoFlask Docker-Friendly App 🚀
+## 📦 Uso con Docker Compose (PostgreSQL)
 
+1. Crear archivo `.env` con tus variables de entorno:
 
-
-
-Autores: Thiago + ChatGPT
-📂 Estructura del proyecto
-
-flask-docker-friendly/
-├─ app.py
-├─ requirements.txt
-├─ .env.example
-├─ Dockerfile
-├─ docker-compose.yml
-├─ templates/
-│  ├─ index.html
-│  └─ about.html
-└─ static/
-
-⚙️ Requisitos
-
-    Docker ≥ 24
-
-    Docker Compose ≥ 2.17
-
-    Python 3.11 (solo si ejecutás localmente)
-
-🟢 Variables de entorno (.env)
-
-Cloná .env.example y renombralo a .env:
-
-cp .env.example .env
-
-Editá los valores:
-
-SECRET_KEY=mi_clave_secreta
+```env
+SECRET_KEY=changeme
 PORT=8000
-DB_HOST=db
-DB_PORT=5432
-DB_USER=user
-DB_PASSWORD=password
 DATABASE_URL=postgresql://user:password@db:5432/flaskdb
 FLASK_ENV=development
+```
 
-🐳 Uso desde DockerHub
+2. Asegurarte de tener `docker-compose.yml` en el repositorio.
 
- git pull falconerr88/imagenes-pruebas:appmessages
+3. Levantar la app junto con la base de datos:
 
-docker run -p 8000:8000 --env-file .env falconerr88/imagenes-pruebas:appmessages
-O podes subir vos la imagen con el nombre que quieras y cambiarla por la mia que ya esta subida en DockerHub
-    Accedé a la app en http://localhost:8000.
-
-🐙 Uso desde GitHub
-
-Cloná el repositorio:
-
-git clone git@github.com:falconerr88/messages-web.git
-cd flask-docker-friendly
-
-Construí la imagen y ejecutala:
-
-docker build -t flask_app .
-docker run -p 8000:8000 --env-file .env flask_app:latest
-
-🏗️ Uso con Docker Compose
-
-Levanta la app y la base de datos PostgreSQL juntos:
-
+```bash
 docker-compose up --build
+```
 
-    Accedé a http://localhost:8000.
+4. Acceder a la app en el navegador: [http://localhost:8000](http://localhost:8000)
 
-    Los mensajes se guardan en PostgreSQL y persisten gracias al volumen pgdata.
+> PostgreSQL manejará la persistencia de todos los mensajes. No es necesario configurar volúmenes adicionales.
 
-⚡ Notas importantes
+---
 
-    Multi-stage Dockerfile → imagen más liviana y segura.
+## 📝 Notas de desarrollo
 
-    Usuario no-root (appuser) → mejora la seguridad.
+* Para correr local sin Docker (solo para pruebas):
 
-    Healthcheck → Docker puede verificar que la app esté lista.
+```bash
+pip install -r requirements.txt
+python app.py
+```
 
-    Persistencia de datos → volumen pgdata mantiene los mensajes aunque cierres los contenedores.
+* Healthcheck integrado: `GET /health` devuelve `{"status":"ok"}`
 
-📝 Comandos útiles
+---
 
-# Levantar solo la app
-docker-compose up -d web
+## 📂 Estructura de archivos
 
-# Ver logs
-docker-compose logs -f
+```
+/app
+  ├─ app.py
+  ├─ requirements.txt
+  ├─ Dockerfile
+  ├─ docker-compose.yml
+  ├─ .env.example
+  ├─ templates/
+  └─ static/
+```
 
-# Detener y eliminar contenedores
-docker-compose down
+---
 
-# Reconstruir imagen después de cambios
-docker-compose up --build
+## 👨‍💻 Autor
 
-✅ Resumen
-
-Esta app está diseñada para:
-
-    Ser fácil de contenerizar y ejecutar en cualquier máquina.
-
-    Mantener la configuración fuera del código mediante .env.
-
-    Producción segura y portable con Docker y PostgreSQL.
+Proyecto desarrollado por **Thiago + ChatGPT**, diseñado para ser **portable, seguro y completamente dockerizado con PostgreSQL**.
 
