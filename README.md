@@ -17,6 +17,7 @@ Esta versión está optimizada para **ejecutarse únicamente con Docker Compose 
 * Usuario no root en producción.
 * Healthcheck integrado.
 * Fácil de ejecutar en cualquier máquina con Docker y Docker Compose.
+* Probada tanto en Linux Ubuntu como en Windows 11
 
 ---
 
@@ -29,8 +30,9 @@ Esta versión está optimizada para **ejecutarse únicamente con Docker Compose 
 ---
 
 ## 📦 Uso con Docker Compose (PostgreSQL)
-
-1. Crear archivo `.env` con tus variables de entorno:
+1. Clonar este repositorio
+git clone (elegir metodo de clonacion)
+2. Crear archivo `.env` con tus variables de entorno:
 
 ```env
 SECRET_KEY=changeme
@@ -39,15 +41,15 @@ DATABASE_URL=postgresql://user:password@db:5432/flaskdb
 FLASK_ENV=development
 ```
 
-2. Asegurarte de tener `docker-compose.yml` en el repositorio.
+3. Asegurarte de tener `docker-compose.yml` en el repositorio.
 
-3. Levantar la app junto con la base de datos:
+4. Levantar la app junto con la base de datos:
 
 ```bash
 docker-compose up --build
 ```
 
-4. Acceder a la app en el navegador: [http://localhost:8000](http://localhost:8000)
+5. Acceder a la app en el navegador: [http://localhost:8000](http://localhost:8000)
 
 > PostgreSQL manejará la persistencia de todos los mensajes. No es necesario configurar volúmenes adicionales.
 
